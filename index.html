@@ -134,7 +134,7 @@ body{
 .poem::before{top:0}
 .poem::after{top:100%}
 .poem p{margin:0;font-weight:600;font-size:clamp(19px,5.4vw,22px);line-height:2;color:var(--ink)}
-.poem .h{display:inline-block}
+.poem .h{display:block}
 .poem p+p{margin-top:6px}
 .poem .hl{color:var(--madder);font-weight:700}
 
@@ -151,6 +151,7 @@ body{
 .announce .name{font-weight:700;font-size:clamp(30px,8.6vw,38px);line-height:1.75;color:var(--madder)}
 .announce .name small{font-size:20px;font-weight:600;color:var(--ink)}
 .announce .tail{font-size:clamp(18px,5vw,20px);line-height:2;text-wrap:balance}
+.announce .blessed{font-weight:700;font-size:clamp(25px,7vw,30px);line-height:1.8;color:var(--madder)}
 .pill{display:flex;align-items:center;justify-content:center;gap:8px;margin:8px 0 6px}
 .pill span{
   font-family:var(--f-cal);font-weight:700;font-size:clamp(23px,6.6vw,27px);line-height:1.5;color:var(--ivory);
@@ -220,7 +221,8 @@ body{
 .box{border:1.5px solid var(--madder);border-radius:14px;padding:26px 6px 14px;position:relative;display:grid;place-items:center}
 .box .tag{font-size:15px}
 .box p{margin:0;font-size:clamp(22px,6vw,26px);font-weight:700;line-height:1.5;color:var(--madder)}
-.contacts{display:grid;gap:10px;align-content:center}
+.contacts{display:grid;gap:10px;align-content:center;position:relative;border:1.5px solid var(--madder);border-radius:14px;padding:30px 10px 16px;background:#fbf6ec}
+.contacts .tag{font-size:15px}
 .contacts div{display:grid;gap:0}
 .contacts b{font-size:17px;font-weight:700;color:var(--madder);line-height:1.7}
 .contacts a{font-family:var(--f-en);font-size:18px;letter-spacing:.04em;color:var(--ink);text-decoration:none}
@@ -239,7 +241,8 @@ body{
   .box{padding:22px 3px 12px}
   .box .tag{font-size:12.5px;padding:0 9px 2px}
   .box p{font-size:clamp(16px,4.9vw,20px)}
-  .contacts{gap:8px}
+  .contacts{gap:8px;padding:24px 6px 12px}
+  .contacts .tag{font-size:12.5px;padding:0 9px 2px}
   .contacts b{font-size:clamp(12.5px,3.7vw,15px)}
   .contacts a{font-size:clamp(13.5px,4vw,16.5px);letter-spacing:.01em}
 }
@@ -325,9 +328,9 @@ img{max-width:100%}
         <p class="bism" lang="ar">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
 
         <figure class="poem">
-          <p><span class="h">ساريم جن کي سڪ مان،</span> <span class="h">سي ھلي آيا حبيب،</span></p>
-          <p><span class="h">انتظار ھو جن جو،</span> <span class="h">سي ھلي آيا هن قريب</span></p>
-          <p><span class="h">واھ"<span class="hl">خليل</span>" جا نصيب،</span> <span class="h">حب مان سڀ ھلي آيا ھن۔</span></p>
+          <p><span class="h">ساريم جن کي سڪ مان</span> <span class="h">سي آيا اڱڻ حبيب</span></p>
+          <p><span class="h">اکيون جن لاءِ آسائتيون</span> <span class="h">سي آھن اڄ قريب</span></p>
+          <p><span class="h">واھ تنھنجا نصيب</span> <span class="h"><span class="hl">خليل</span> مليا کلي ڪري</span></p>
         </figure>
 
         <p class="salaam"><span>مان وارا سائين</span><span class="dots" aria-hidden="true"></span><span>السلام عليڪم</span></p>
@@ -341,7 +344,9 @@ img{max-width:100%}
             <svg viewBox="0 0 54 20" aria-hidden="true"><path d="M2 10 H34" stroke="#8b1d20" stroke-width="1.6"/><circle cx="40" cy="10" r="5" fill="none" stroke="#8b1d20" stroke-width="1.6"/><path d="M47 10 L51 6 L55 10 L51 14Z" fill="#8b1d20" transform="translate(-3 0)"/><path d="M2 10 L6 6 M2 10 L6 14" stroke="#8b1d20" stroke-width="1.6" fill="none"/></svg>
           </div>
           <p class="name">ذوالفقار علي سهتو</p>
-          <p class="tail">جي ڀاڳن ڀري نياڻيءَ سان هيٺ ڄاڻايل پروگرام موجب ٿي رهي آهي.</p>
+          <p class="lead">ولد <b>جان محمد سهتو</b> جي</p>
+          <p class="blessed">ڀاڳن ڀري ڌيءَ</p>
+          <p class="tail">سان هيٺ ڄاڻايل پروگرام موجب ٿي رهي آهي.</p>
         </div>
 
         <p class="lede">الله تعاليٰ جي فضل ۽ وڏڙن جي دعائن سان، ٻنهي خاندانن جي اوهان کي عرض آهي ته شاديءَ جي خوشين ۾ شريڪ ٿيو.</p>
@@ -405,6 +410,7 @@ img{max-width:100%}
         <div class="hosts">
           <div class="box"><span class="tag">آسائتا</span><p>من گهريا<br>مائٽ</p></div>
           <div class="contacts">
+            <span class="tag">رابطي جي لاءِ</span>
             <div><b>ذوالفقار علي سهتو</b><a href="tel:+923133734752" dir="ltr">0313-3734752</a></div>
             <div><b>وحيد علي سهتو</b><a href="tel:+923213151141" dir="ltr">0321-3151141</a></div>
             <div><b>خليل الرحمٰن سهتو</b><a href="tel:+923190391510" dir="ltr">0319-0391510</a></div>
